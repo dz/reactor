@@ -52,7 +52,7 @@
       template: "number",
       post_id: "",
       primary_color: "#333",
-      access_token: "225862394517955|sfr2Xi56vpp8yLkodT8r1hJwkXM",
+      access_token: "xxxxxxxxxxxxxxxxxx",
       show_like: "true",
       show_love: "true",
       show_angry: "true",

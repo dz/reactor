@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Facebook Reactions</title>
+    <link rel="stylesheet" href="jquery-ui.min.css" type="text/css" />
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+    <script src="lodash.js"></script>
+    <script src="jquery.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="chart.min.js"></script>
+    <script src="js.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        Settings.init('#panel');
+        Reactions.init('#reactions');
+      });
+    </script>
+    <script type="template/lodash" id="template_number-reaction_item">
+      <li class="reaction bg-primary-color" id="reaction-<%= reaction_type %>">
+        <img class="icon" src="icons/<%= reaction_type %>.png" /> <span class="counter"></span>
+      </li>
+    </script>
+  </head>
+  <body>
+
+    <div id="template_number" class="template">
+      <ul id="reactions">
+      </ul>
+    </div>
+
+    <div id="template_bar" class="template">
+      <canvas id="template_bar_chart" width="800" height="800"></canvas>
+    </div>
+
+    <div id="panel">
+      <a href="#" id="panel_close">CLOSE</a>
+      <h1>Settings</h1>
+      <p>
+        <label for="setting_template">Template</label>
+        <select id="setting_template" name="template" class="template_select">
+          <option value="number">Number</option>
+        </select>
+      </p>
+      <p>
+        <label for="setting_post_id">Video ID</label><input type="text" value="" id="setting_post_id" name="post_id" class="plain" />
+      </p>
+      <p>
+        <label for="setting_primary_color">Primary Color</label><input type="text" value="" id="setting_primary_color" name="primary_color" class="plain" />
+      </p>
+      <div id="panel_reactions">
+        <h1>Reactions <small>(choose which you want)</small></h1>
+        <p>
+          <ul>
+            <li><input type="checkbox" name="show_like" id="setting_show_like" /><label for="setting_show_like">Like</label></li>
+            <li><input type="checkbox" name="show_love" id="setting_show_love" /><label for="setting_show_love">Love</label></li>
+            <li><input type="checkbox" name="show_angry" id="setting_show_angry" /><label for="setting_show_angry">Angry</label></li>
+          </ul>
+          <ul>
+            <li><input type="checkbox" name="show_sad" id="setting_show_sad" /><label for="setting_show_sad">Sad</label></li>
+            <li><input type="checkbox" name="show_haha" id="setting_show_haha" /><label for="setting_show_haha">Haha</label></li>
+            <li><input type="checkbox" name="show_wow" id="setting_show_wow" /><label for="setting_show_wow">Wow</label></li>
+          </ul>
+        </p>
+      </div>
+      <p>
+        <label for="setting_access_token">Access Token</label><input type="text" value="" id="setting_access_token" name="access_token" class="plain" />
+      </p>
+    </div>
+  </body>
+</html>
